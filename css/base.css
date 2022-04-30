@@ -1,0 +1,104 @@
+:root {
+    --white-clolor: #fff;
+    --black-color:#000;
+    --text-color:#333;
+    --primary-color:rgb(251 85 51);
+    --boder-color: #dbdbdb;
+    --navbar-height: 31px;
+    --header-height: 120px;
+    --header-with-search-height: calc( var(--header-height) - var(--navbar-height))
+}
+
+* {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+}
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid-grow {
+    display: flex;
+    flex-wrap: wrap;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+
+}
+@keyframes grow {
+    from {
+        transform: scale(var(--grow-from));
+    }
+    to {
+        transform: scaleX(var(--grow-to));
+    }
+}
+ /* modal */
+ .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+ }
+ .modal__ovelay {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.4);
+ }
+.modal__body {
+    --grow-from: 0.7;
+    --grow-to: 1;
+    background-color:var(--white-clolor);
+    border-radius: 5px;
+    position: relative;
+    margin: auto;
+    z-index: 1;
+    overflow: hidden;
+    animation: grow linear 0.1s;
+}
+.btn.btn--h:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.btn {
+    height: 34px;
+    min-width: 140px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+.btn.btn--primary {
+    background-color: var(--primary-color);
+    color: var(--white-clolor);
+}
+.auth-form__controls-back {
+    margin-right: 8px;
+}
+
+.btn.btn__with-icon {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    font-size: 1.4rem;
+    min-width: 200px;
+}
